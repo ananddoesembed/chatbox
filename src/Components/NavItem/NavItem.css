@@ -1,0 +1,30 @@
+
+.nav-item{
+
+    
+    width: 100%;
+
+}
+.nav-item:last-child{
+    margin-top: auto;
+}
+.nav-link{
+display: flex;
+margin-left: 1rem;
+align-items: center;
+text-decoration: none;
+height: 5rem;
+
+}
+ .link-text{
+    display: none;
+    transition-delay: 1s display;
+}
+.navbar:hover .link-text{
+    
+    display: block;
+    padding-left: 2.5rem;
+}
+.nav-item:hover{
+    background-color:#d7ecff;
+}
