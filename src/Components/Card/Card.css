@@ -1,0 +1,24 @@
+.card{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    flex-direction: row;
+    background-color: white;
+    margin: 1.5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    height: 40px;
+    transition: 200ms;
+    font-size: 15px;
+}
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
+}
+.textcard{
+    text-align: center;
+    width: 75%;
+}
+.image{
+    padding-left: 15px;
+}

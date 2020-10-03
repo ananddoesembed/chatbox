@@ -24,6 +24,7 @@ height: 5rem;
     
     display: block;
     padding-left: 2.5rem;
+    color: black;
 }
 .nav-item:hover{
     background-color:#d7ecff;

@@ -5,9 +5,10 @@ import './NavItem.css'
 export default function NavItem(props) {
 
     return (
-        <li className='nav-item'>
+        <li className='nav-item' draggable onDragStart={props.dragged}>
         <Link className='nav-link'>
-        <img src={props.url} style={{height:'40px',width:'40px'}} alt='build'/>
+        {console.log(props.url)}
+        <img src={props.url} style={{height:'30px',width:'30px'}} alt='build'/>
            <span className='link-text'>{props.name}</span>
         </Link>
     </li>

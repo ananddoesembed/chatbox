@@ -1,6 +1,6 @@
 .navbar{
     width: 5rem;
-    height: 100vh;
+    height: 100%;
     background-color: aliceblue;
     position: fixed;
     transition: width 200ms ease;
