@@ -1,19 +1,24 @@
  const NAVBAR_DATA ={
 items:[
-    {   alt:'Build',
+    {   id:0,
+        alt:'Build',
         path:'/assets/engineering-black-18dp.svg'
     },
-    {   alt:'Integrate',
+    {   id:1,
+        alt:'Integrate',
         path:'/assets/build-24px.svg'
     },
-    {   alt:'Contact us',
+    {   id:2,
+        alt:'Contact',
         path:'/assets/call-24px.svg'
     },
     {
+        id:3,
         alt:'Purchase',
         path:'/assets/add_shopping_cart-24px.svg'
     },
-    {   alt:'Logout',
+    {   id:4,
+        alt:'Logout',
         path:'/assets/follow_the_signs-24px.svg'
     },
    

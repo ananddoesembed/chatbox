@@ -7,6 +7,7 @@ const Header = () => {
     return (
         <div className='header'>
             <img src={Logo} className='logo-container' alt='LogoHere'/>
+            
             <div className='options'>
                 <span className='option'>Pricing</span>
                 <Link to='/dashboard' className='option'>
@@ -14,8 +15,10 @@ const Header = () => {
                 </Link>
                 <span className='option'>Login</span>
                 <span className='signUP' onClick={()=>setSign(!sign)}>{sign?'SignUP':'SignOut'}</span>
-                
             </div>
+           
+
+            
         </div>
     )
 }

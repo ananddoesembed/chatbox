@@ -10,7 +10,7 @@ export default function Navbar() {
     return (
         <div  className='navbar' >
              <ul className='navbar-nav' >
-             {items.map(item=><NavItem url={item.path} name={item.alt} />)}
+             {items.map(item=><NavItem key={item.id} url={item.path} name={item.alt} />)}
             
             
             

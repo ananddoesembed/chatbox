@@ -1,19 +1,61 @@
-import React from 'react'
+import React,{useReducer,useState} from 'react'
 import Card from '../Card/Card'
 import './Board.css'
 import ShopDatas from '../../Pages/Card.data'
-export default function Board() {
-    const {items} = ShopDatas
-    return (
-        <div className='board'>
-            <div className='card-board'>
-            {items.map(item=><Card id={item.id} symbol={item.symbol} Text={item.Text} url={item.path}/>)}
-            
-    
-            </div>
-            <div className='chat-board'>
+import Chat from '../Chat/Chat'
 
+export default function Board() {
+   
+
+  
+  
+    const [sideBar,setSideBar]=useState(false)  
+  
+    const [myArray, dispatch] = useReducer((myArray, { type, value }) => {
+        switch (type) {
+          case "add":
+            const myAddArray = [...myArray]
+            myAddArray.splice(myAddArray.length-1,0,value.id)
+            return myAddArray
+          case "remove":
+            const myRemoveArray = [...myArray]
+            myRemoveArray.splice(value,1)
+            return myRemoveArray
+            case "copy":
+            const myCopyArray = [...myArray]
+            const {index,it} = value
+            myCopyArray.splice(index,0,it.id)
+            return myCopyArray
+          default:
+            return myArray;
+        }
+      }, [0,0]);
+      
+    const {items} = ShopDatas
+
+   
+
+    return (
+      
+            <div className='board'>
+                <div className='card-board'>
+                {items.map(item=><Card key={item.id} Text={item.Text}
+                url={item.path} clickHandler={()=>dispatch({type:'add',value:item})}/>)}
+                </div>
+                <div className='chat-board'>
+                {myArray.map(chatItem => items.find(item => chatItem === item.id)).map((it,index)=><Chat key={Math.random()} 
+                 Text={it.Text} url={it.path}
+                 removeHandler={()=>dispatch({type:'remove',value:index})} 
+                 copyHandler={()=>dispatch({type:'copy',value:{index,it}})}
+                 editHandler={()=>setSideBar(!sideBar)}
+                />)}
+                </div>
+               
+                
             </div>
-        </div>
+           
+          
+          
     )
 }
+

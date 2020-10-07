@@ -9,8 +9,8 @@ import './HomePage.css'
 export default function HomePage() {
     return (
         <div className='HomePage'>
-        <Header/>
-        <BG className = 'background'/>
+        <Header/>                                       {/* header coponent */}
+        <BG className = 'background'/>                   {/* bbackground image */}
         </div>
     )
 }

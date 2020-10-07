@@ -1,84 +1,84 @@
 const CARD_DATA = {
   items: [ {
-        id:1,
+        id:0,
         alt:'Message',
         path:'/assets/chat-24px.svg',
         Text:'Message'
     },
     {
-        id:2,
+        id:1,
         alt:'Multichoice',
         path:'/assets/check_box_outline_blank-24px.svg',
         Text:'MultiChoice'
     },
     {
-        id:3,
+        id:2,
         alt:'Question',
         path:'/assets/question_answer-24px.svg',
         Text:'Question'
     },
     {
-        id:4,
+        id:3,
         alt:'email',
         path:'/assets/email-24px.svg',
         Text:'Email'
     },
     {
-        id:5,
+        id:4,
         alt:'call',
         path:'/assets/call-24px.svg',
         Text:'Phone'
     },
     {
-        id:6,
+        id:5,
         alt:'date',
         path:'/assets/calendar_today-24px.svg',
         Text:'Appointment'
     },
     {
-        id:7,
+        id:6,
         alt:'select',
         path:'/assets/check_box_outline_blank-24px.svg',
         Text:'Multi Select'
     },
     {
-        id:8,
+        id:7,
         alt:'list',
         path:'/assets/format_list_numbered-24px.svg',
         Text:'List'
     },
     {
-        id:9,
+        id:8,
         alt:'dialpad',
         path:'/assets/dialpad-24px.svg',
         Text:'Number'
     },
     {
-        id:10,
+        id:9,
         alt:'opinion',
         path:'/assets/grade-24px.svg',
         Text:'Range'
     },    
     {
-        id:13,
+        id:10,
         alt:'appointment',
         path:'/assets/event-24px.svg',
         Text:'Date'
     },
     {
-        id:14,
+        id:11,
         alt:'attachfile',
         path:'/assets/attach_file-24px.svg',
         Text:'File Upload'
     },
     {
-        id:15,
+        id:12,
         alt:'link',
         path:'/assets/link-24px.svg',
         Text:'Links'
     },
     {
-        id:16,
+        id:13,
         alt:'like',
         path:'/assets/thumb_up-24px.svg',
         Text:'Thank You'
