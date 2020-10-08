@@ -1,16 +1,13 @@
-import React,{useReducer,useState} from 'react'
+import React,{useReducer} from 'react'
 import Card from '../Card/Card'
 import './Board.css'
 import ShopDatas from '../../Pages/Card.data'
 import Chat from '../Chat/Chat'
-
-export default function Board() {
-   
-
-  
-  
-    const [sideBar,setSideBar]=useState(false)  
-  
+import { connect } from 'react-redux'
+import {setSlideState} from '../../redux/slide/slide.action'
+const Board=({setSlideState})=> {
+    
+    
     const [myArray, dispatch] = useReducer((myArray, { type, value }) => {
         switch (type) {
           case "add":
@@ -30,13 +27,15 @@ export default function Board() {
             return myArray;
         }
       }, [0,0]);
+
+      
       
     const {items} = ShopDatas
-
+    
    
 
     return (
-      
+        
             <div className='board'>
                 <div className='card-board'>
                 {items.map(item=><Card key={item.id} Text={item.Text}
@@ -47,15 +46,22 @@ export default function Board() {
                  Text={it.Text} url={it.path}
                  removeHandler={()=>dispatch({type:'remove',value:index})} 
                  copyHandler={()=>dispatch({type:'copy',value:{index,it}})}
-                 editHandler={()=>setSideBar(!sideBar)}
+                 editHandler={setSlideState}
+                 
                 />)}
                 </div>
                
                 
             </div>
+            
            
           
           
     )
 }
+const mapDispatchToProps = dispatch =>({
+  setSlideState:()=>dispatch(setSlideState())
+})
 
+
+export default connect(null,mapDispatchToProps)( Board)

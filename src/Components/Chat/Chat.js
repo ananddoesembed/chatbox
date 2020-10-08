@@ -15,3 +15,5 @@ export default function Chat({url,alt,Text,editHandler,removeHandler,copyHandler
         </div>
     )
 }
+
+

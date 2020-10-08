@@ -1,16 +1,17 @@
+import slideActiontType from './slide.types';
 
 const INITIAL_STATE ={
-    slidestate:false
+    slidestateShow:false
 }
 
 
 const slideReducer = (state=INITIAL_STATE,action) =>{
 
     switch(action.type){
-        case 'SET_SLIDE_STATE':
+        case slideActiontType.SET_SLIDE_STATE:
             return{
                 ...state,
-                slidestate : action.payload
+                slidestateShow : !state.slidestateShow
             } ;
        default:
            return state; 

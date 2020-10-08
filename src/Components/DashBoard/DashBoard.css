@@ -1,3 +1,21 @@
-.dashboard{
+.dashboard {
     height: 100vh;
+}
+.all{
+height: 100vh;
+width: 100vw;
+background-color: black;
+opacity: 0.3;
+}
+
+.none{
+    visibility: hidden;
+}
+
+.slidebar{
+    width: 280px;
+    height: 100vh;
+    background-color: blanchedalmond;
+    box-shadow: burlywood;
+    
 }

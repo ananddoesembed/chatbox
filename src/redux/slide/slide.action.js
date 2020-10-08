@@ -1,4 +1,5 @@
-export const setSlide = slide =>({
-type:'SET_SLIDE_STATE',
-payload:slide
+import slideActiontType from './slide.types'
+
+export const setSlideState = () =>({
+type:slideActiontType.SET_SLIDE_STATE,
 })
