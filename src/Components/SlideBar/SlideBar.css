@@ -1,0 +1,43 @@
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.allSlide {
+    padding-top: 15%;
+    width: 20vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    transition: width 1.3s;
+}
+
+.noneSlide {
+    width: 0px;
+}
+
+.allip {
+    padding-left: 8px;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    width: 150%;
+    transition: width 1.3s;
+}
+
+.noneip {
+
+    width: 0px;
+}
+
+.img {
+    padding-right: 2px;
+}
+.buttons{
+    display:flex;
+    justify-content: flex-end;
+    padding-right: 6px;
+}

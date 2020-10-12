@@ -1,57 +1,30 @@
-import React,{useReducer} from 'react'
+import React from 'react'
 import Card from '../Card/Card'
 import './Board.css'
 import ShopDatas from '../../Pages/Card.data'
 import Chat from '../Chat/Chat'
 import { connect } from 'react-redux'
-import {setSlideState} from '../../redux/slide/slide.action'
-const Board=({setSlideState})=> {
-    
-    
-    const [myArray, dispatch] = useReducer((myArray, { type, value }) => {
-        switch (type) {
-          case "add":
-            const myAddArray = [...myArray]
-            myAddArray.splice(myAddArray.length-1,0,value.id)
-            return myAddArray
-          case "remove":
-            const myRemoveArray = [...myArray]
-            myRemoveArray.splice(value,1)
-            return myRemoveArray
-            case "copy":
-            const myCopyArray = [...myArray]
-            const {index,it} = value
-            myCopyArray.splice(index,0,it.id)
-            return myCopyArray
-          default:
-            return myArray;
-        }
-      }, [0,0]);
+import {setSlideState,setSlideComponent} from '../../redux/slide/slide.action'
+import {chatAddItem,chatRemoveItem,chatCopyItem} from '../../redux/chat/chat.action'
+import {selectChatItemPreview} from '../../redux/chat/chat.select'
 
-      
-      
+
+const Board=({previewItems,chatAddItems,removeItem,copyItem,setSlideStates})=> {
     const {items} = ShopDatas
-    
-   
-
     return (
-        
             <div className='board'>
                 <div className='card-board'>
                 {items.map(item=><Card key={item.id} Text={item.Text}
-                url={item.path} clickHandler={()=>dispatch({type:'add',value:item})}/>)}
+                url={item.path} clickHandler={()=>chatAddItems(item)}/>)}
                 </div>
                 <div className='chat-board'>
-                {myArray.map(chatItem => items.find(item => chatItem === item.id)).map((it,index)=><Chat key={Math.random()} 
-                 Text={it.Text} url={it.path}
-                 removeHandler={()=>dispatch({type:'remove',value:index})} 
-                 copyHandler={()=>dispatch({type:'copy',value:{index,it}})}
-                 editHandler={setSlideState}
-                 
-                />)}
-                </div>
-               
+                {
+                  previewItems.map((previewItem,index)=><Chat key={previewItem.id} url={previewItem.path} Text={previewItem.Text} 
+                    removeHandler={()=>removeItem(index)} copyHandler={()=>copyItem({previewItem,index})} editHandler={()=>setSlideStates({previewItem,index})}
+                  />)
+                }
                 
+                </div>     
             </div>
             
            
@@ -60,8 +33,13 @@ const Board=({setSlideState})=> {
     )
 }
 const mapDispatchToProps = dispatch =>({
-  setSlideState:()=>dispatch(setSlideState())
+  setSlideStates:item=>dispatch(setSlideState(),dispatch(setSlideComponent(item))),
+  chatAddItems:item=>dispatch(chatAddItem(item)),
+  removeItem:item=>dispatch(chatRemoveItem(item)),
+  copyItem:item=>dispatch(chatCopyItem(item))
 })
+const mapStateToProps = state =>({
+  previewItems:selectChatItemPreview(state)
+  })
 
-
-export default connect(null,mapDispatchToProps)( Board)
+export default connect(mapStateToProps,mapDispatchToProps)( Board)

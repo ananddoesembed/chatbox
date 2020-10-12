@@ -1,0 +1,21 @@
+.button{
+    height: 30px;
+    border-radius: 10px;
+    width: 100px;
+    background-color: white;
+    cursor: pointer;
+    transition: width 1.5s;
+    margin: 3px;
+    height: auto;
+    text-align: center;
+    border:none,
+    
+}
+
+.cancel{
+    
+    color: red;
+}
+.save{
+    color: teal;
+}

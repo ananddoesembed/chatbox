@@ -2,9 +2,7 @@
 .board{
     padding: 1%;
     margin-left: 14rem;
-    display: flex;
-    
-    
+    display: flex;    
 
 }
 .chat-board{
@@ -25,14 +23,4 @@
     background-color: white;
     width: 50%;
     height:60vh;
-}
-.sidebar{
-display: flex;
-position: fixed;
-height: 100vh;
-transition: width 1s;
-background-color: black;
-}
-.Open{
-width: 280px;
 }
