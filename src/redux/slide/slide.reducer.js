@@ -15,7 +15,7 @@ const slideReducer = (state=INITIAL_STATE,action) =>{
                 slidestateShow : !state.slidestateShow
             } ;
             case slideActiontType.SET_SLIDE_COMPONENT:
-                console.log(action.payload)
+                // console.log(action.payload)
                 const {previewItem,index} = action.payload
                  previewItem.idx = index
                  const newcomponent = previewItem

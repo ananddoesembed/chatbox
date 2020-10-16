@@ -17,7 +17,7 @@ const  DashBoard=({setSlideShow,setSlideState,slideComponent,idx})=> {
             </div>
         </div>:<div className='nonesliderControl'>
             <div className='noneoutbox' onClick={setSlideState}/>
-            <dic className='noneslidebox'/>
+            <div className='noneslidebox'/>
         </div>}   
         <div className='dashboard'>
             <Navbar/>
