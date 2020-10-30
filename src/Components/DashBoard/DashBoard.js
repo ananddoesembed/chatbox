@@ -6,8 +6,11 @@ import { connect } from 'react-redux'
 import {selectSetSlideShow} from '../../redux/slide/slide.select'
 import { setSlideState} from '../../redux/slide/slide.action'
 import SlideBar from '../SlideBar/SlideBar'
+
+
+
 const  DashBoard=({setSlideShow,setSlideState,slideComponent,idx})=> {
-    
+   
     return (
         <div>
         {setSlideShow?<div className='allsliderControl'>
@@ -23,6 +26,7 @@ const  DashBoard=({setSlideShow,setSlideState,slideComponent,idx})=> {
             <Navbar/>
             <Board/>
         </div>
+       
         </div>
     )
 }

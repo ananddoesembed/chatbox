@@ -19,7 +19,8 @@ const chatReducer = (state=INITIAL_STATE,action) =>{
     switch(action.type){
         case chatActionType.ADD_ITEM:
              const ChatAddArray = [...state.chatArray]
-             ChatAddArray.splice(ChatAddArray.length-1, 0, action.payload);
+             const newpayload ={...action.payload}
+             ChatAddArray.splice(ChatAddArray.length-1, 0, newpayload);
             return{
                 
                 ...state,
@@ -55,8 +56,8 @@ const chatReducer = (state=INITIAL_STATE,action) =>{
 
             const chatEditArray = [...state.chatArray]
             chatEditArray[idx].Text = values
-            // console.log(values)
-            console.log(chatEditArray,idx)
+            console.log('values',values)
+            // console.log(chatEditArray,idx)
             return{
                 
                 ...state,

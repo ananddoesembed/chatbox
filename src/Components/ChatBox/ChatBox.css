@@ -1,0 +1,47 @@
+
+.chatHeadStyle{
+    
+    position:absolute;
+    width:250px;
+    height:350px;
+    bottom:80px;
+    right:120px;
+    color:#000;
+    border-radius: 10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    justify-content: center;
+  
+  }
+.chatHeadStyle>div{
+    margin:  6px;
+}
+.text{
+    width: 98%;
+    height: 10%;
+    padding-left: 3%;
+    
+}
+
+.chatBox{
+    height: 80vh;
+    width: 96%;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.input{
+    display: flex;
+    height: 10vh;
+    width: 98%;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    align-items: center;
+    justify-items: center;
+}
+.send-button{
+text-align: center;
+width: 10%;
+cursor: pointer;
+}
